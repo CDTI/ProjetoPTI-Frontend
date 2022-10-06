@@ -1,10 +1,10 @@
-//React
+// React
 import { useEffect, useState } from "react";
-//Types
+// Types
 import { TDiscipline } from "../../@types/Discipline";
-//Controllers
+// Controllers
 import { DisciplineController } from "../../api/DisciplineController";
-//Components
+// Components
 import DisciplinesFilter from "../../components/GetDisciplines/DisciplinesFilter";
 import DisciplinesTable from "../../components/GetDisciplines/DisciplinesTable";
 

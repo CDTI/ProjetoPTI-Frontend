@@ -1,4 +1,4 @@
-//Icons
+// Icons
 import { List, UserCircle } from "phosphor-react";
 import IconButton from "./IconButton";
 

@@ -1,12 +1,12 @@
-//React
+// React
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-//Components
+// Components
 import { SideBar } from "../components/SideBar/SideBar";
 import { TopBar } from "../components/TopBar";
 
 export default function DefaultLayout() {
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
   const toggle = () => setIsSideBarOpen(!isSideBarOpen);
   return (
     <div>

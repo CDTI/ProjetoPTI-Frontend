@@ -1,16 +1,15 @@
-//React
+// React
 import { useEffect, useState } from "react";
-//Types
+// Types
 import { TCourseCreate } from "../../@types/Course";
 import { TCampus } from "../../@types/Campus";
-//Controllers
+// Controllers
 import { CourseController } from "../../api/CourseController";
 import { CampusController } from "../../api/CampusController";
-//Form
+// Form
 import { FormProvider, useForm } from "react-hook-form";
-//Components
+// Components
 import MySelect from "../../components/MySelect";
-
 
 export type FormValues = {
   name: string;
@@ -41,22 +40,25 @@ export default function CreateCourse() {
   }, []);
 
   async function createNewCourse(e: FormValues) {
-    const course : TCourseCreate = {
+    const course: TCourseCreate = {
       codigo_mec: e.mec_code,
       codigo_siaa: e.siaa_code,
       nome: e.name,
-      unidades: e.campus
-    }
-    await CourseController.getInstance().create(course)
-  } 
+      unidades: e.campus,
+    };
+    await CourseController.getInstance().create(course);
+  }
 
   return (
-    <FormProvider  {...formMethods}>
+    <FormProvider {...formMethods}>
       <div className="w-full h-full px-8">
         <h1 className="text-3xl text-center pt-8 font-semibold ">
           Cadastrar disciplina
         </h1>
-        <form onSubmit={formMethods.handleSubmit(createNewCourse)} className="max-w-[720px] m-auto mt-8">
+        <form
+          onSubmit={formMethods.handleSubmit(createNewCourse)}
+          className="max-w-[720px] m-auto mt-8"
+        >
           <div className="flex flex-col justify-start">
             <label>Nome do curso</label>
             <input

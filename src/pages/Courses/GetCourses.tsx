@@ -1,16 +1,16 @@
-//React
+// React
 import { useEffect, useState } from "react";
-//Types
+// Types
 import { TCourse } from "../../@types/Course";
-//Controllers
+// Controllers
 import { CourseController } from "../../api/CourseController";
-//Components
+// Components
 import CoursesFilter from "../../components/GetCourses/CoursesFilter";
 import CoursesTable from "../../components/GetCourses/CoursesTable";
 
 export default function GetDisciplines() {
   const [courses, setCourses] = useState<TCourse[]>([]);
-  const [filteredCourses, setFilteredCourses ] = useState<TCourse[]>([])
+  const [filteredCourses, setFilteredCourses] = useState<TCourse[]>([]);
   const [isFilterCollapsed, setIsFilterCollapsed] = useState(false);
 
   useEffect(() => {
@@ -26,14 +26,13 @@ export default function GetDisciplines() {
   const updateFilteredCourses = (newCourses: TCourse[]) => {
     setFilteredCourses(newCourses);
   };
-  const toggleFilterCollapsbile = () => setIsFilterCollapsed(!isFilterCollapsed);
+  const toggleFilterCollapsbile = () =>
+    setIsFilterCollapsed(!isFilterCollapsed);
 
   return (
     <div className="overflow-hidden">
-      <h1 className="text-3xl pl-8 pt-8 font-semibold ">
-        Lista dos cursos
-      </h1>
-      <CoursesFilter 
+      <h1 className="text-3xl pl-8 pt-8 font-semibold ">Lista dos cursos</h1>
+      <CoursesFilter
         courses={courses}
         updateFilteredCourses={updateFilteredCourses}
         isFilterCollapsed={isFilterCollapsed}
@@ -41,9 +40,7 @@ export default function GetDisciplines() {
         toggleFilterCollapsbile={toggleFilterCollapsbile}
       />
       <CoursesTable
-        courses={
-          filteredCourses.length > 0 ? filteredCourses : courses
-        }
+        courses={filteredCourses.length > 0 ? filteredCourses : courses}
         isFilterCollapsed={isFilterCollapsed}
       />
     </div>

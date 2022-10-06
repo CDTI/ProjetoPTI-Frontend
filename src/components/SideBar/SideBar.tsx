@@ -1,8 +1,8 @@
-//Motion
+// Motion
 import { motion } from "framer-motion";
-//Icons
+// Icons
 import { Atom, GraduationCap, MicrosoftExcelLogo } from "phosphor-react";
-//Components
+// Components
 import SideBarItem from "./SideBarItem";
 
 interface SideBarProps {

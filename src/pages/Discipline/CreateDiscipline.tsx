@@ -1,13 +1,13 @@
-//React
+// React
 import { useEffect, useState } from "react";
-//Types
+// Types
 import { TCourseSelect } from "../../@types/Course";
-//Controllers
+// Controllers
 import { CourseController } from "../../api/CourseController";
 import { DisciplineController } from "../../api/DisciplineController";
-//Form
+// Form
 import { FormProvider, useForm } from "react-hook-form";
-//Components
+// Components
 import MySelect from "../../components/MySelect";
 
 export type FormValues = {
@@ -42,10 +42,9 @@ export default function CreateDiscipline() {
 
   async function handleCreateDisciplineSubmit(e: FormValues) {
     const coursesCodes: string[] = [];
-    courses.map((course) => {
-      e.courses.map((selectedCourse) => {
-        if (selectedCourse === course.nome)
-          coursesCodes.push(course.id);
+    courses.forEach((course) => {
+      e.courses.forEach((selectedCourse) => {
+        if (selectedCourse === course.nome) coursesCodes.push(course.id);
       });
     });
     await DisciplineController.getInstance().create({

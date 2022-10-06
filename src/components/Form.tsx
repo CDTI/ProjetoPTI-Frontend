@@ -1,5 +1,5 @@
-import React, { ButtonHTMLAttributes } from "react";
-import { InputHTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes, InputHTMLAttributes } from "react";
+
 import Select from "react-select";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}

@@ -1,19 +1,19 @@
-//React
+// React
 import { FormEvent, useRef } from "react";
-//Radix
+// Radix
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@radix-ui/react-collapsible";
-//Icons
+// Icons
 import { CaretDown, CaretUp, Trash } from "phosphor-react";
-//Types
+// Types
 import { TDiscipline } from "../../@types/Discipline";
-//Utils
+// Utils
 import { filterDisciplines } from "../../utils/filterDisciplines";
 
-interface DisciplinesFilter {
+interface DisciplinesFilterProps {
   disciplines: TDiscipline[];
   isFilterCollapsed: boolean;
   updateFilteredDisciplines: (newDisciplines: TDiscipline[]) => void;
@@ -27,7 +27,7 @@ export default function DisciplinesFilter({
   disciplines,
   updateFilteredDisciplines,
   resetFilter,
-}: DisciplinesFilter) {
+}: DisciplinesFilterProps) {
   const fName = useRef<HTMLInputElement>(null);
   const fCode = useRef<HTMLInputElement>(null);
   const fCurso = useRef<HTMLInputElement>(null);
